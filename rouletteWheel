@@ -1,0 +1,15 @@
+--total percentage sum has to be 1
+local choices = {["apples"]= 0.1, ["flour"] = 0.2, ["milk"]=0.3, ["oranges"]=0.4} 
+
+local function roll(t)
+   local  c  =  0
+   local r = math.random()
+   for i,n in pairs(t) do
+       c = c + n
+       if r <= c then
+           return i
+       end
+   end
+ end
+ 
+print("getWheel:", roll(choices))
