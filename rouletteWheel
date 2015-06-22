@@ -1,9 +1,10 @@
---total percentage sum has to be 1
-local choices = {["apples"]= 0.1, ["flour"] = 0.2, ["milk"]=0.3, ["oranges"]=0.4} 
+--sum of values has to be = dice
+local choices = {["apples"]= 10, ["flour"] = 20, ["milk"]=30, ["oranges"]=40} 
 
-local function roll(t)
+local function roll(t, dice)
+   if not dice then dice = 100 end --default dice = 100
    local  c  =  0
-   local r = math.random()
+   local r = math.random(dice)
    for i,n in pairs(t) do
        c = c + n
        if r <= c then
